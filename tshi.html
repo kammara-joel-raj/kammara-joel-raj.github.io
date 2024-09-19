@@ -146,6 +146,74 @@ document.getElementById("zoom2").value = a;
 </script>
 
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  CALC
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+<script>
+var inputstring="";
+function updatestring(value){
+inputstring=inputstring+value;
+document.getElementById('calc').input.value=inputstring;
+}
+</script>
+
+<form name="calculator" id = 'calc'>
+<table border="4" align="center" bgcolor="pink" bordercolor="black"›
+<tr>
+<td colspan="4"><input type="text" name="input" maxlength="15" size="27"></td> </tr>
+<tr> 
+<td><input type="button" value="clear" onclick="input.value=' ';inputstring=' '"></td>
+<td><input type="button" value="mod" onclick="updatestring('%')"></td>
+<td><input type="button" value="*" onclick="updatestring('*')"></td> </tr>
+
+<tr>
+<td><input type="button" value="7" onclick="updatestring('7')"></td>
+<td><input type="button" value="8" onclick="updatestrin('8')"></td>
+<td><input type="button" value="9" onclick="updatestring('9')"></td>
+<td><input type="button" value="/" onclick="updatestring('/')"></td> </tr>
+
+<tr>
+<td><input type="button" value="4" onclick="updatestring('4')"></td>
+<td><input type="button" value="5" onclick="updatestring('5')"></td>
+<td><input type="button" value="6" onclick="updatestring('6')"></td>
+<td><input type="button" value="-" onclick="updatestring('-')"></td> </tr>
+
+<tr>
+<td><input type="button" value="1" onclick="updatestring('1')"></td>
+<td><input type="button" value="2" onclick="updatestring('2')"></td>
+<td><input type="button" value="3" onclick="updatestring('3')"></td>
+<td><input type="button" value="+" onclick="updatestring('+')"></td> </tr>
+
+<tr>
+<td><input type="button" value="0" onclick="updatestring('0')"></td>
+<td><input type="button" value="00" onclick="updatestring('00')"></td>
+<td><input type="button" value="." onclick="updatestring('.')"></td>
+<td><input type="button" value="=" onclick="input.value = eval(inputstring);"></td> </tr>
+</table>
+</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
@@ -191,14 +259,14 @@ document.getElementById("zoom2").value = a;
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <button type="button" class="btn btn-outline-primary">Primary</button>
-        <button type="button" class="btn btn-outline-secondary">Secondary</button>
-        <button type="button" class="btn btn-outline-success">Success</button>
-        <button type="button" class="btn btn-outline-danger">Danger</button>
-        <button type="button" class="btn btn-outline-warning">Warning</button>
-        <button type="button" class="btn btn-outline-info">Info</button>
-        <button type="button" class="btn btn-outline-light">Light</button>
-        <button type="button" class="btn btn-outline-dark">Dark</button>
+        <button type="button" class="btn btn-outline-primary" onclick="add();">ADD</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="add();">ADD</button>
+        <button type="button" class="btn btn-outline-success" onclick="add();">ADD</button>
+        <button type="button" class="btn btn-outline-danger" onclick="add();">ADD</button>
+        <button type="button" class="btn btn-outline-warning" onclick="add();">ADD</button>
+        <button type="button" class="btn btn-outline-info" onclick="add();">ADD</button>
+        <button type="button" class="btn btn-outline-light" onclick="add();">ADD</button>
+        <button type="button" class="btn btn-outline-dark" onclick="add();">ADD</button>
       </div>
     </div>
   </div>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing System Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        #chart-container {
+            width: 80%;
+            max-width: 900px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart-container">
+        <h1>Ticket Pranali vs Manual Booking</h1>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',  // Changed to line chart
+            data: {
+                labels: [
+                    'Ticket Cost',
+                    'Time Efficiency',
+                    'Productivity',
+                    'Scalability',
+                    'Crowd',
+                    'Cost Efficiency',
+                    'Ease of Use'
+                ],
+                datasets: [
+                    {
+                        label: 'Ticket Pranali',
+                        data: [5, 7, 8, 8, 4, 8, 8], // Data for Ticket Pranali
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.1 // Smooth curves
+                    },
+                    {
+                        label: 'Manual Booking',
+                        data: [5, 4, 5, 5, 7, 4, 4], // Data for Manual Booking
+                        backgroundColor: 'rgba(255, 159, 64, 0.5)',
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.1 // Smooth curves
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Ticketing System Comparison'
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 1, // Set minimum value to 1
+                        max: 9, // Set maximum value to 9
+                        ticks: {
+                            callback: function(value) {
+                                if (value === 2) return 'Low';
+                                if (value === 8) return 'High';
+                                return ''; // No intermediate labels
+                            },
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

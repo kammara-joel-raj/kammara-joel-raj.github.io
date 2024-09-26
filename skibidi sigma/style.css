@@ -1,0 +1,54 @@
+html {
+  font-size: 25px;
+  background: url('./background.jpg');
+  background-size: cover;
+}
+
+.key{
+  border: 0.3rem solid red;
+  border-radius: .5rem;
+  color: greenyellow;
+  background:lightcoral;
+  margin:10px;
+  text-align:center;
+  width:auto;
+  transition: all 0.17s ease;
+}
+
+.keys {
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.row1 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; /* Optional: adds spacing between elements */
+}
+
+/* Make .row2 display 5 items per row */
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #003cffa2;
+  box-shadow: 0 0 1rem #46dcf7;
+  background:rgb(135, 128, 238);
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}

@@ -77,7 +77,7 @@
         <kbd>U</kbd>
         <span class="sound">tink</span>
       </div>
-      <div data-key="73" class="key">
+      <div data-key="73" class="key" onclick="lel(73);">
         <kbd>I</kbd>
         <span class="sound">tink</span>
       </div>
@@ -126,6 +126,19 @@ window.addEventListener('keydown', playSound);
 function playSound(e) {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+  if (!audio) return;
+
+  key.classList.add('playing');
+  setTimeout(function(){
+    key.classList.remove('playing');
+  },170)
+  audio.currentTime = 0;
+  audio.play();
+}
+
+function lel(o){
+  const audio = document.querySelector(`audio[data-key="${o}"]`);
+  const key = document.querySelector(`audio[data-key="${o}"]`);
   if (!audio) return;
 
   key.classList.add('playing');

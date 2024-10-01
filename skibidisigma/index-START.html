@@ -61,19 +61,19 @@
         <kbd>E</kbd>
         <span class="sound">tink</span>
       </div>
-      <div data-key="82" class="key">
+      <div data-key="82" class="key" onclick="lel(82);">
         <kbd>R</kbd>
         <span class="sound">tink</span>
       </div>
-      <div data-key="84" class="key">
+      <div data-key="84" class="key" onclick="lel(84);">
         <kbd>T</kbd>
         <span class="sound">tink</span>
       </div>
-      <div data-key="89" class="key">
+      <div data-key="89" class="key" onclick="lel(89);">
         <kbd>Y</kbd>
         <span class="sound">tink</span>
       </div>
-      <div data-key="85" class="key">
+      <div data-key="85" class="key" onclick="lel(85);">
         <kbd>U</kbd>
         <span class="sound">tink</span>
       </div>
@@ -81,11 +81,11 @@
         <kbd>I</kbd>
         <span class="sound">tink</span>
       </div>
-      <div data-key="79" class="key">
+      <div data-key="79" class="key" onclick="lel(79);">
         <kbd>O</kbd>
         <span class="sound">tink</span>
       </div>
-      <div data-key="80" class="key">
+      <div data-key="80" class="key" onclick="lel(80);">
         <kbd>P</kbd>
         <span class="sound">tink</span>
       </div>
@@ -132,7 +132,7 @@ function playSound(e) {
   key.classList.add('playing');
   setTimeout(function(){
     key.classList.remove('playing');
-  },170)
+  },170);
   audio.currentTime = 0;
   audio.play();
 }
@@ -144,7 +144,7 @@ function lel(o){
 
   key.classList.add('playing');
   setTimeout(function(){
-    key.classList.remove('playing');
+  key.classList.remove('playing');
   },170)
   audio.currentTime = 0;
   audio.play();
